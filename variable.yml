@@ -5,9 +5,9 @@
   tasks: 
     - name: Restart filebeat 
       service:
-       name: "{{ service }}"
+       name: "{{ services }}"
        state: restarted
        enabled: yes
     vars:
-      service:
+      services:
        - filebeat
