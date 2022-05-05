@@ -1,0 +1,15 @@
+---
+- 
+  name: "service module demo"
+  hosts: all
+  become: true
+  tasks: 
+  - name: Restart filebeat 
+    service:
+    name: "{{ service }}"
+    State: restarted
+    enabled: yes
+    become: true
+  vars:
+    service:
+    - filebeat
