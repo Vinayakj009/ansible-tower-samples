@@ -6,8 +6,8 @@
     - name: Restart filebeat 
       service:
        name: "{{ services }}"
-       state: restarted
        enabled: yes
+       state: restarted
     vars:
       services:
        - filebeat
