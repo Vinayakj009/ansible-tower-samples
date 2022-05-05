@@ -4,11 +4,11 @@
   hosts: all
   become: true
   tasks: 
-   - name: Restart filebeat 
-     service:
-     name: "{{ service }}"
-     state: restarted
-     enabled: yes
-  vars:
-    service:
-    - filebeat
+     - name: Restart filebeat 
+       service:
+       name: "{{ service }}"
+       state: restarted
+       enabled: yes
+    vars:
+      service:
+       - filebeat
