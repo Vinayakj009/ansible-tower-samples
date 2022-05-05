@@ -4,5 +4,6 @@
     - name: Get filebeat status
       shell: systemctl status filebeat
       register: filebeat_status
-    - debug:
-      var: filebeat_status.stdout_lines
+    - name: debug
+      debug:
+        var: filebeat_status.stdout_lines
