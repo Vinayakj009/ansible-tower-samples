@@ -1,5 +1,5 @@
 ---
-- name: "service module demo"
+ - name: "service module demo"
   hosts: all
   become: true
   tasks: 
