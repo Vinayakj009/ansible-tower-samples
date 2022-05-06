@@ -3,5 +3,5 @@
   hosts: all
   become: true
   tasks: 
-   - name: Restart service filebeat {{ service }}
-     service: name={{ service}} state=restarted enabled=true
+  - name: Restart service filebeat {{ service }}
+    service: name={{ service}} state=restarted enabled=true
