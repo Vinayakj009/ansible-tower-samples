@@ -1,5 +1,5 @@
 - name: "service module demo"
-  hosts: {{ host }}
+  hosts: {{ target }}
   become: true
   tasks: 
     - name: Restart service {{ service }}
