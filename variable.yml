@@ -2,7 +2,7 @@
   hosts: all
   become: true
   tasks: 
-    - name: Restart service filebeat {{ service }}
+    - name: Restart service {{ service }}
       service: name={{ service }} state=restarted enabled=true
     - name: Check the Uptime of the {{ service }}
       shell: "uptime"
