@@ -6,4 +6,5 @@
       service: name={{ service}} state=restarted enabled=true
       register: service_status
     - name: debug
-      var: service_status.stdout.lines
+      debug:
+       var: service_status.stdout_lines
