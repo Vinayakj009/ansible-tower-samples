@@ -4,3 +4,6 @@
   tasks: 
     - name: Restart service filebeat {{ service }}
       service: name={{ service}} state=restarted enabled=true
+      register: service_status
+    - name: debug
+      var: service_status.stdout.lines
