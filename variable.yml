@@ -4,7 +4,7 @@
   tasks: 
     - name: Restart service filebeat {{ service }}
       service: name={{ service }} state=restarted enabled=true
-      register: services_state
-    - name: debug
-      debug:
-       var: services_state.stdout_lines
+    - name: Check the Uptime of the {{ service }}
+      shell: "uptime"
+      register: Uptime
+    - debug: var=Uptime
