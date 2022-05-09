@@ -7,4 +7,4 @@
     - name: Check the Uptime of the {{ service }}
       shell: "uptime"
       register: Uptime
-    - debug: var=Uptime
+    - debug: var=Uptime.stdout_lines
