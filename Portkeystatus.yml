@@ -1,0 +1,10 @@
+---
+ - hosts: ["{{ target }}"]
+   tasks:
+   - name: To run multiple commands in shell
+     shell: |
+         echo "Portkey ran on " `date -d @$( jq ".generatedOn" /var/SugarOS/health.json )`
+         echo "Current date and time on edge is :" `date`
+     register: date
+
+   - debug: var=date.stdout_lines
