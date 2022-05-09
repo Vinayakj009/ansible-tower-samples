@@ -11,5 +11,5 @@
     
     - name: Show {{ service }} status
       debug:
-      msg: '{{ service }} exists.'
-     when: servicestatus.rc | int == 0 
+       msg: '{{ service }} exists.'
+      when: servicestatus.rc | int == 0 
