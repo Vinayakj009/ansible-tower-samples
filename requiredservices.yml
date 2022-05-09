@@ -1,7 +1,0 @@
----
- - hosts: ["{{ target }}"]
-   tasks:
-   - name: check for status
-     shell: echo "As per portkey required services are running:" `jq ".areRequiredServicesActive" /var/SugarOS/health.json`
-     register: jq
-   - debug: var=jq.stdout_lines
