@@ -4,7 +4,11 @@
   tasks: 
     - name: Restart service {{ service }}
       service: name={{ service }} state=restarted enabled=true
-    - name: Check the Uptime of the {{ service }}
-      shell: "uptime"
-      register: Uptime
-    - debug: var=Uptime.stdout_lines
+     shell: sudo service {{ service }} status
+     ignore_errors: true
+     register: servicestatus
+
+   - name: Show {{ service }} status
+     debug:
+      msg: '{{ service }} exists.'
+     when: servicestatus.rc | int == 0 
