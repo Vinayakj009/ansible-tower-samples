@@ -8,8 +8,7 @@
       shell: sudo service {{ service }} status
       ignore_errors: true
       register: servicestatus
-    
     - name: Show {{ service }} status
       debug:
       msg: '{{ service }} exists.'
-      when: servicestatus.rc | int == 0 
+     when: servicestatus.rc | int == 0 
