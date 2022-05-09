@@ -10,6 +10,6 @@
       register: servicestatus
 
     - name: Show {{ service }} status
-     debug:
+      debug:
       msg: '{{ service }} exists.'
      when: servicestatus.rc | int == 0 
