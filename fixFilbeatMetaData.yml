@@ -1,0 +1,8 @@
+- hosts: ["{{ target }}"]
+  tasks:
+   - name: check for status
+     shell: |
+        sudo rm /var/lib/filebeat/registry/filebeat/meta.json
+        sudo rm /var/lib/filebeat/registry/filebeat/data.json
+   - name: restart filebeat
+     shell: sudo systemctl restart filebeat
